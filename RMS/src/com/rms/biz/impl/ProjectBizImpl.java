@@ -21,13 +21,13 @@ public class ProjectBizImpl implements ProjectBiz{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Project> findProject(String userId,int start,int limit) {
-		String hql = "select new Project(pro.id,pro.name,pro.description,pro.ownerid,pro.time) "
+		String hql = "select new Project(pro.id,pro.name,pro.description,pro.ownerid,pro.username,pro.time) "
 				+ "from  Project pro,Participant pt where pt.userid='"+userId+"' and pt.projectid=pro.id";
 		
 		System.out.println("hql: "+hql);
 		List<Project> list = (List<Project>)baseDao.findByHql(hql,start, limit);
 		if(list==null){
-			list=new ArrayList();
+			list=new ArrayList<Project>();
 		}
 		return list;
 	}

@@ -48,6 +48,7 @@ public class ProjectAction extends BaseAction{
 		project.setDescription(description);
 		project.setRemark(remark);
 		project.setOwnerid(user.getUserid());
+		project.setUsername(user.getUsername());
 		project.setTime(time.getYMD());
 		project.setId(UUID.randomUUID().toString());
 		

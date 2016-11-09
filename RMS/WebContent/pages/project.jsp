@@ -79,7 +79,7 @@
 						<span>项目备注<label>*</label></span>
 						<input type="text" id='remark' name='remark'> 
 					  </div>
-					  <input type="submit" id='login' value="提交项目" style='margin-top:10px;'/>
+					  <input type="submit" id='login' value="添加项目" style='margin-top:10px;'/>
 				    </div>
 				 </form>
 			</div>
@@ -112,7 +112,7 @@
 					%>
 					
 						<tr id='<jsp:getProperty name="project" property="ownerid" />'>
-							<td><jsp:getProperty name="project" property="ownerid" /></td> 
+							<td><jsp:getProperty name="project" property="username" /></td> 
                     		<td><jsp:getProperty name="project" property="name" /></td> 
                              <td><jsp:getProperty name="project" property="description" /></td>
                              <td><jsp:getProperty name="project" property="time" /></td>

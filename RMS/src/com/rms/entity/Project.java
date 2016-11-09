@@ -8,15 +8,17 @@ public class Project implements Serializable{
 	private String name;
 	private String description;
 	private String ownerid;
+	private String username;
 	private String time;
 	
 	public Project(){}
 	
-	public Project(String id,String name,String description,String ownerid,String time){
+	public Project(String id,String name,String description,String ownerid,String username,String time){
 		this.id=id;
 		this.name=name;
 		this.description=description;
 		this.ownerid=ownerid;
+		this.username=username;
 		this.time=time;
 	}
 	
@@ -57,6 +59,14 @@ public class Project implements Serializable{
 	}
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	} 
 	
 	

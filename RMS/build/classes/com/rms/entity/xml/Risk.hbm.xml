@@ -20,6 +20,11 @@
         <property name="userid" type="java.lang.String">
             <column name="userid" length="255" not-null="false" />
         </property>
+        
+         <property name="username" type="java.lang.String">
+            <column name="username" length="255" not-null="true" />
+        </property>
+        
         <property name="content" type="java.lang.String">
             <column name="content" length="255" not-null="true" />
         </property>

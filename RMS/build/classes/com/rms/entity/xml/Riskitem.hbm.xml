@@ -16,6 +16,11 @@
         <property name="userid" type="java.lang.String">
             <column name="userid" length="255" not-null="true" />
         </property>
+        
+         <property name="username" type="java.lang.String">
+            <column name="username" length="255" not-null="true" />
+        </property>
+        
         <property name="state" type="java.lang.String">
             <column name="state" length="255" not-null="true" />
         </property>

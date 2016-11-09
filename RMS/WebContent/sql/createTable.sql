@@ -17,6 +17,7 @@ create table project(
 	name varchar(255),
 	description varchar(255),
 	ownerid varchar(255),
+username varchar(255);
 	time varchar(255),
 	remark varchar(255),
 	primary key(id)
@@ -35,6 +36,7 @@ create table risk(
 	name varchar(255);
 	projectid varchar(255) not null,
 	userid varchar(255) not null,
+	username varchar(255);
 	content varchar(255),
 	possibility varchar(255),
 	influence varchar(255),
@@ -48,6 +50,7 @@ create table riskitem(
 	id varchar(255) not null,
 	riskid varchar(255) not null,
 	userid varchar(255) not null,
+	username varchar(255);
 	state varchar(255),
 	description varchar(255),
 	time varchar(255);

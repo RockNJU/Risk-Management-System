@@ -59,7 +59,7 @@
 					  </div>
 					  
 					  
-					  <input type="submit" id='login' value="提交项目" style='margin-top:10px;'/>
+					  <input type="submit" id='login' value="提交新状态" style='margin-top:10px;'/>
 				    </div>
 				 </form>
 			</div>
@@ -91,11 +91,12 @@
 					%>
 					
 						<tr id='<jsp:getProperty name="riskitem" property="state" />'>
+							<td><jsp:getProperty name="riskitem" property="state" /></td> 
 							<td><jsp:getProperty name="riskitem" property="description" /></td> 
-                    		<td><jsp:getProperty name="riskitem" property="state" /></td> 
+                    		<td><jsp:getProperty name="riskitem" property="username" /></td> 
                     		<td><jsp:getProperty name="riskitem" property="time" /></td> 
      
-                             <td><a href='<%=request.getContextPath()%>/risk_deleteRiskitem.do?id=<jsp:getProperty name="riskitem" property="id" />&projectid=<jsp:getProperty name="project" property="id" />'>删除项目</a></td>
+                             <td><a href='<%=request.getContextPath()%>/risk_deleteRiskitem.do?id=<jsp:getProperty name="riskitem" property="id" />&projectid=<jsp:getProperty name="project" property="id" />'>删除风险状态</a></td>
                     	</tr>
 						
 						<%} %>

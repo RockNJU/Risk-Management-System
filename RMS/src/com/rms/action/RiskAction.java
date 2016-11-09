@@ -56,6 +56,7 @@ public class RiskAction extends BaseAction{
 		risk.setId(UUID.randomUUID().toString());
 		
 		risk.setUserid(user.getUserid());
+		risk.setUsername(user.getUsername());
 		Time t=new Time();
 		risk.setTime(t.getYMD());
 		
@@ -157,6 +158,7 @@ public String addRiskItem(){
 		
 		item.setUserid(user.getUserid());
 		
+		item.setUsername(user.getUsername());
 		commonBiz.add(item);
 		
 		refreshItemList();

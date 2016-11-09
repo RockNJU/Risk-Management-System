@@ -65,11 +65,11 @@
 					  </div>
 					  
 					  <div>
-						<span>阈值<label></label></span>
+						<span>阈值（必须为数值）<label></label></span>
 						<input type="text" id='shh' name='shreshold'> 
 					  </div>
 					  
-					  <input type="submit" id='login' value="提交项目" style='margin-top:10px;'/>
+					  <input type="submit" id='login' value="添加风险" style='margin-top:10px;'/>
 				    </div>
 				 </form>
 			</div>
@@ -104,9 +104,10 @@
 					%>
 					
 						<tr id='<jsp:getProperty name="risk" property="id" />'>
-							<td><jsp:getProperty name="risk" property="userid" /></td> 
+							<td><jsp:getProperty name="risk" property="username" /></td> 
+							<td><jsp:getProperty name="risk" property="time" /></td> 
                     		<td><jsp:getProperty name="risk" property="name" /></td> 
-                    		<td><jsp:getProperty name="risk" property="time" /></td> 
+                    		
                              <td><jsp:getProperty name="risk" property="content" /></td>
                              <td><jsp:getProperty name="risk" property="possibility" /></td>
                              <td><jsp:getProperty name="risk" property="influence" /></td>
@@ -114,7 +115,7 @@
                              <td><jsp:getProperty name="risk" property="shreshold" /></td> 
                              
                              <td><a href='<%=request.getContextPath()%>/risk_showRiskItem.do?riskid=<jsp:getProperty name="risk" property="id" />'>跟踪风险</a></td>
-                             <td><a href='<%=request.getContextPath()%>/risk_deleteRisk.do?riskid=<jsp:getProperty name="risk" property="id" />&projectid=<jsp:getProperty name="project" property="id" />'>删除项目</a></td>
+                             <td><a href='<%=request.getContextPath()%>/risk_deleteRisk.do?riskid=<jsp:getProperty name="risk" property="id" />&projectid=<jsp:getProperty name="project" property="id" />'>删除风险</a></td>
                     	</tr>
 						
 						<%} %>

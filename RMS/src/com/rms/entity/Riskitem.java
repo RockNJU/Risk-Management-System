@@ -3,12 +3,16 @@ package com.rms.entity;
 import java.io.Serializable;
 
 public class Riskitem implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String riskid;
 	private String userid;
 	private String state;
 	private String description;
-	
+	private String username;
 	private String time;
 	
 	public String getId() {
@@ -46,6 +50,12 @@ public class Riskitem implements Serializable{
 	}
 	public void setTime(String time) {
 		this.time = time;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 }

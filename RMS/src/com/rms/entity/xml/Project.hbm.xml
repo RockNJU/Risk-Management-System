@@ -22,6 +22,10 @@
             <column name="ownerid" length="255" not-null="true" />
         </property>
         
+         <property name="username" type="java.lang.String">
+            <column name="username" length="255" not-null="true" />
+        </property>
+        
         <property name="time" type="java.lang.String">
             <column name="time" length="255" />
         </property>

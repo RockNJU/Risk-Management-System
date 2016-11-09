@@ -14,7 +14,7 @@ public class Risk implements Serializable{
 	private String name;
 	private String projectid;
 	private String userid;
-	
+	private String username;
 	private String content;
 	private String possibility;
 	private String influence;
@@ -93,6 +93,14 @@ public class Risk implements Serializable{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	
