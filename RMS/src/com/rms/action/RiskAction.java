@@ -41,9 +41,7 @@ public class RiskAction extends BaseAction{
 	
 	
 	public String addRisk(){
-		System.out.println("------添加风险。-------1");
 		UserDTO user=(UserDTO)session.get(Constants.USERINFO);
-		System.out.println("-------添加风险。-------2");
 		
 		projectid=(String)session.get("projectId");
 		
@@ -66,14 +64,12 @@ public class RiskAction extends BaseAction{
 		
 		refreshRiskPage();
 		
-		System.out.println("-------添加风险。-------3");
 		return "risk";
 	}
 	
 	
 	public String showRisk(){
 		
-		System.out.println("展示项目-的风险---");
 		
 		if(projectid==null){
 			System.out.println("展示项目的风险时，项目id不能为空。");
@@ -100,7 +96,6 @@ public class RiskAction extends BaseAction{
 	}
 	
 	public String showRiskItem(){
-		System.out.println("展示风险详情详细时  itemid不能为空  。--------->"+riskid);
 		if(riskid==null){
 			System.out.println("展示风险详情时  itemid不能为空  。");
 		}
@@ -123,7 +118,6 @@ public class RiskAction extends BaseAction{
 		
 		Risk risk=(Risk)session.get("riskinfo");
 		
-		System.out.println("-------刷新  riskitem----》" +risk.getId());
 		
 		List<Riskitem> itemList=riskBiz.getRiskItem(risk.getId());
 		RiskItemListBean bean=new RiskItemListBean();
@@ -134,21 +128,16 @@ public class RiskAction extends BaseAction{
 	
 	
 	public String deleteRisk(){
-		System.out.println("----s-----删除 riskid---:----1        :。"+riskid);
 		commonBiz.delete(Risk.class,riskid);
-		System.out.println("----s-----删除 riskid---:----2        :。"+riskid);
 		refreshRiskPage();
-		System.out.println("----s-----删除 riskid---:----3        :。"+riskid);
 		return "risk";
 	}
 	
 public String addRiskItem(){
 	
-	System.out.println("-----add--riskitem。-------1");
 	UserDTO user=(UserDTO)session.get(Constants.USERINFO);
 	
 	Risk risk=(Risk)session.get("riskinfo");
-	System.out.println("------add-riskitem。-------2");
 		Riskitem item=new Riskitem();
 		
 		item.setDescription(description);
@@ -156,7 +145,10 @@ public String addRiskItem(){
 		item.setRiskid(risk.getId());
 		item.setState(state);
 		
+		Time t=new Time();
+		
 		item.setUserid(user.getUserid());
+		item.setTime(t.getYMD());
 		
 		item.setUsername(user.getUsername());
 		commonBiz.add(item);
@@ -166,11 +158,8 @@ public String addRiskItem(){
 	}
 	
 	public String deleteRiskitem(){
-		System.out.println("------------删除item--------1");
 		commonBiz.delete(Riskitem.class, id);
-		System.out.println("------------删除item--------2");
 		refreshItemList();
-		System.out.println("------------删除item--------3");
 		return "riskItem";
 	}
 	

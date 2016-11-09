@@ -36,9 +36,7 @@ public class ProjectAction extends BaseAction{
 	private String time;
 	
 	public String addProject(){
-		System.out.println("-------添加项目的数据请求。-------1");
 		UserDTO user=(UserDTO)session.get(Constants.USERINFO);
-		System.out.println("-------添加项目的数据请求。-------2");
 		
 		
 		Time time=new Time();
@@ -58,13 +56,10 @@ public class ProjectAction extends BaseAction{
 		participant.setProjectid(project.getId());
 		participant.setUserid(user.getUserid());
 		
-		System.out.println("-------添加项目的数据请求。-------3");
 		
 		commonBiz.add(project);
 		
-		System.out.println("-------添加项目的数据请求。-------6");
 		commonBiz.add(participant);
-		System.out.println("-------添加项目的数据请求。-------7");
 		
 		return "project";
 	}
@@ -89,14 +84,11 @@ public class ProjectAction extends BaseAction{
 	}
 	
 	public String getProjects(){
-		System.out.println("-------进行项目的数据请求。-------1");
 		UserDTO user=(UserDTO)session.get(Constants.USERINFO);
-		System.out.println("-------进行项目的数据请求。-------2");
 		
 		try{
 		
 		List<Project> list=projectBiz.findProject(user.getUserid(),0, 10);
-		System.out.println("--------获得的大小："+list.size());
 		this.outListJsonString(list);
 		
 		} catch (Exception e) {

@@ -53,7 +53,6 @@ public class UserAction extends BaseAction  {
 			UserDTO userInfo = userBiz.login(code, pass);
 			
 			if (userInfo != null) {
-				System.out.println("登录成功！"+userInfo.getUsername());
 				this.getSession().setAttribute(Constants.USERINFO, userInfo);
 				return "success";
 			
