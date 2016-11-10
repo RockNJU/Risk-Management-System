@@ -1,6 +1,6 @@
 node {
     stage('SCM') {
-        git 'https://github.com/RockNJU/Risk-Management-System.git'
+        git 'https://github.com/RockNJU/Risk-Management-System.git/'
     }
     stage('QA') {
         sh 'sonar-scanner'
